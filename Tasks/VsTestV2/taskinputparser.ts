@@ -128,6 +128,9 @@ function initTestConfigurations(testConfiguration: models.TestConfigurations) {
     testConfiguration.buildPlatform = tl.getInput('platform');
     testConfiguration.testRunTitle = tl.getInput('testRunTitle');
 
+    testConfiguration.disableTrx = tl.getBoolInput('disableTrx');
+    console.log(tl.loc('disableTrx', testConfiguration.disableTrx));
+
     // Rerun information
     testConfiguration.rerunFailedTests = tl.getBoolInput('rerunFailedTests');
     console.log(tl.loc('rerunFailedTests', testConfiguration.rerunFailedTests));

@@ -396,6 +396,8 @@ function getExecutionSettings(inputDataContract : idc.InputDataContract) : idc.I
     inputDataContract = getDiagnosticsSettings(inputDataContract);
     console.log(tl.loc('diagnosticsInput', inputDataContract.ExecutionSettings.DiagnosticsSettings.Enabled));    
 
+    inputDataContract.ExecutionSettings.DisableTrx = tl.getBoolInput('disableTrx');
+
     // Custom console wrapper settings
     inputDataContract.ExecutionSettings.PathToCustomVsTestConsoleWrapperAssembly = tl.getVariable('vstest.customConsoleWrapperAssemblyLocation');
 
