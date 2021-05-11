@@ -109,6 +109,7 @@ export interface ExecutionSettings {
     TempFolder : string;
     VideoDataCollectorEnabled : boolean;
     DiagnosticsSettings : DiagnosticsSettings;
+    DisableTrx: boolean;
 }
 
 export interface TestSourceSettings {

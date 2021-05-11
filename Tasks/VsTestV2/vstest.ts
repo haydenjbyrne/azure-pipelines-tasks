@@ -152,7 +152,11 @@ function getVstestArguments(settingsFile: string, addTestCaseFilter: boolean): s
         argsArray.push('/InIsolation');
     }
 
-    argsArray.push('/logger:trx');
+    if (!vstestConfig.disableTrx)
+    {
+        argsArray.push('/logger:trx');
+    }
+
     if (utils.Helper.isNullOrWhitespace(vstestConfig.pathtoCustomTestAdapters)) {
         if (vstestConfig.testDropLocation && isTestAdapterPresent(vstestConfig.testDropLocation)) {
             argsArray.push('/TestAdapterPath:\"' + vstestConfig.testDropLocation + '\"');
@@ -634,7 +638,10 @@ async function vsTestCall(newSettingsFile, vsVersion): Promise<tl.TaskResult> {
 
 function publishTestResults(testResultsDirectory: string): tl.TaskResult {
     try {
-        if (testResultsDirectory) {
+        if (vstestConfig.disableTrx) {
+            return tl.TaskResult.Succeeded;
+        }
+        else if (testResultsDirectory) {
             const resultFiles = tl.findMatch(testResultsDirectory, path.join(testResultsDirectory, '*.trx'));
 
             if (resultFiles && resultFiles.length !== 0) {

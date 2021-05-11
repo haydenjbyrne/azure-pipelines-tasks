@@ -1,7 +1,7 @@
 {
-    "id": "EF087383-EE5E-42C7-9A53-AB56C98420F9",
-    "name": "VSTest",
-    "friendlyName": "Visual Studio Test",
+    "id": "fdc96658-5201-47d2-95f7-1f8a7da9cdec",
+    "name": "VSTestJemmac",
+    "friendlyName": "Visual Studio Test (Jemmac)",
     "description": "Run unit and functional tests (Selenium, Appium, Coded UI test, etc.) using the Visual Studio Test (VsTest) runner. Test frameworks that have a Visual Studio test adapter such as MsTest, xUnit, NUnit, Chutzpah (for JavaScript tests using QUnit, Mocha and Jasmine), etc. can be run. Tests can be distributed on multiple agents using this task (version 2).",
     "helpUrl": "https://docs.microsoft.com/azure/devops/pipelines/tasks/test/vstest",
     "helpMarkDown": "[Learn more about this task](https://go.microsoft.com/fwlink/?LinkId=835764)",
@@ -14,11 +14,11 @@
         "Agent",
         "DeploymentGroup"
     ],
-    "author": "Microsoft Corporation",
+    "author": "Jemmac Software",
     "version": {
         "Major": 2,
         "Minor": 170,
-        "Patch": 1
+        "Patch": 5
     },
     "demands": [
         "vstest"
@@ -378,6 +378,15 @@
             "defaultValue": "False",
             "required": false,
             "helpMarkDown": "Choosing this option will not distribute tests across agents when the task is running in a multi-agent job.<br>Each of the selected test(s) will be repeated on each agent.<br>The option is not applicable when the agent job is configured to run with no parallelism or with the multi-config option.",
+            "groupName": "advancedExecutionOptions"
+        },
+        {
+            "name": "disableTrx",
+            "type": "boolean",
+            "label": "Disable generation of trx results file",
+            "defaultValue": "False",
+            "required": false,
+            "helpMarkDown": "Choosing this option will disable logging test results to a TRX file.<br>This is for use when an alternate logger is used.",
             "groupName": "advancedExecutionOptions"
         },
         {

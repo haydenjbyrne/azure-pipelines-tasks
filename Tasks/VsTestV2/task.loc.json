@@ -1,6 +1,6 @@
 {
-  "id": "EF087383-EE5E-42C7-9A53-AB56C98420F9",
-  "name": "VSTest",
+  "id": "fdc96658-5201-47d2-95f7-1f8a7da9cdec",
+  "name": "VSTestJemmac",
   "friendlyName": "ms-resource:loc.friendlyName",
   "description": "ms-resource:loc.description",
   "helpUrl": "https://docs.microsoft.com/azure/devops/pipelines/tasks/test/vstest",
@@ -14,11 +14,11 @@
     "Agent",
     "DeploymentGroup"
   ],
-  "author": "Microsoft Corporation",
+  "author": "Jemmac Software",
   "version": {
     "Major": 2,
     "Minor": 170,
-    "Patch": 1
+    "Patch": 5
   },
   "demands": [
     "vstest"
@@ -378,6 +378,15 @@
       "defaultValue": "False",
       "required": false,
       "helpMarkDown": "ms-resource:loc.input.help.dontDistribute",
+      "groupName": "advancedExecutionOptions"
+    },
+    {
+      "name": "disableTrx",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.disableTrx",
+      "defaultValue": "False",
+      "required": false,
+      "helpMarkDown": "ms-resource:loc.input.help.disableTrx",
       "groupName": "advancedExecutionOptions"
     },
     {
