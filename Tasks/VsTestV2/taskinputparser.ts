@@ -301,6 +301,9 @@ function getTestSelectorBasedInputs(testConfiguration: models.TestConfigurations
 
             testConfiguration.testcaseFilter = tl.getInput('testFiltercriteria');
             console.log(tl.loc('testFilterCriteriaInput', testConfiguration.testcaseFilter));
+
+            testConfiguration.assemblyRunOrder = tl.getDelimitedInput('assemblyRunOrder', '\n', false);
+            console.log(tl.loc('assemblyRunOrder', testConfiguration.assemblyRunOrder));
             break;
         case 'testrun':
             console.log(tl.loc('testSelectorInput', tl.loc('testRunSelector')));

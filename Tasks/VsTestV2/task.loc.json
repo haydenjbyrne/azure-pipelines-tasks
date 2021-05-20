@@ -194,6 +194,20 @@
       "groupName": "testSelection"
     },
     {
+      "name": "assemblyRunOrder",
+      "type": "multiLine",
+      "label": "ms-resource:loc.input.label.assemblyRunOrder",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "ms-resource:loc.input.help.assemblyRunOrder",
+      "groupName": "testSelection",
+      "properties": {
+        "rows": "1",
+        "resizable": "true"
+      },
+      "visibleRule": "testSelector = testAssemblies"
+    },
+    {
       "name": "vstestLocationMethod",
       "type": "radio",
       "label": "ms-resource:loc.input.label.vstestLocationMethod",
@@ -594,6 +608,7 @@
     "testSelectorInput": "ms-resource:loc.messages.testSelectorInput",
     "searchFolderInput": "ms-resource:loc.messages.searchFolderInput",
     "testFilterCriteriaInput": "ms-resource:loc.messages.testFilterCriteriaInput",
+    "assemblyRunOrder": "ms-resource:loc.messages.assemblyRunOrder",
     "runSettingsFileInput": "ms-resource:loc.messages.runSettingsFileInput",
     "runInParallelInput": "ms-resource:loc.messages.runInParallelInput",
     "runInIsolationInput": "ms-resource:loc.messages.runInIsolationInput",
@@ -633,6 +648,7 @@
     "rerunMaxAttempts": "ms-resource:loc.messages.rerunMaxAttempts",
     "invalidRerunMaxAttempts": "ms-resource:loc.messages.invalidRerunMaxAttempts",
     "rerunNotSupported": "ms-resource:loc.messages.rerunNotSupported",
+    "disableTrx": "ms-resource:loc.messages.disableTrx",
     "toolsInstallerPathNotSet": "ms-resource:loc.messages.toolsInstallerPathNotSet",
     "testImpactAndCCWontWork": "ms-resource:loc.messages.testImpactAndCCWontWork",
     "ToolsInstallerInstallationError": "ms-resource:loc.messages.ToolsInstallerInstallationError",
