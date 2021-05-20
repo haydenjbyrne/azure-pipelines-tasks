@@ -105,7 +105,50 @@ export function startTest() {
 
 function getTestAssemblies(): string[] {
     tl.debug('Searching for test assemblies in: ' + vstestConfig.testDropLocation);
-    return tl.findMatch(vstestConfig.testDropLocation, vstestConfig.sourceFilter);
+    var allTestAssemblies =  tl.findMatch(vstestConfig.testDropLocation, vstestConfig.sourceFilter);
+
+    orderTestAssemblies(allTestAssemblies);
+    
+    return allTestAssemblies;
+}
+
+function orderTestAssemblies(allTestAssemblies: string[]) {
+    tl.debug('Ordering test assemblies');
+    var orders = vstestConfig.assemblyRunOrder || [];
+
+    if (orders.length == 0){
+        tl.debug('No order defined, will keep default');
+        return;
+    }
+
+    var testAssemblyOrders = {};
+
+    for (let index = 0; index < orders.length; index++) {
+        const order = orders[index];
+        tl.debug('Files matching ' + order + ' will be at index ' + index);
+
+        var orderMatches = tl.match(allTestAssemblies, order);
+        tl.debug(orderMatches.length + ' files matched ' + order);
+
+        orderMatches.forEach(matchingTestAssembly => {
+            if (testAssemblyOrders[matchingTestAssembly] === undefined) {
+                tl.debug(matchingTestAssembly + ' will be at index  ' + index);
+                testAssemblyOrders[matchingTestAssembly] = index;
+            } else {
+                tl.debug(matchingTestAssembly + ' already has index ' + testAssemblyOrders[matchingTestAssembly]);
+            }
+        });
+    }
+
+    allTestAssemblies.sort((x, y) => coalesce(testAssemblyOrders[x], orders.length) - coalesce(testAssemblyOrders[y], orders.length));
+}
+
+function coalesce(x: any, y: any) {
+    if (x !== null && x !== undefined) {
+        return x;
+    } else {
+        return y;
+    }
 }
 
 function getVstestArguments(settingsFile: string, addTestCaseFilter: boolean): string[] {

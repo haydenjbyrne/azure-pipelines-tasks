@@ -46,6 +46,7 @@ export interface TestConfigurations {
     proxyConfiguration: ProxyConfiguration;
     diagnosticsConfiguration: DiagnosticsConfiguration;
     disableTrx: boolean;
+    assemblyRunOrder: string[];
 }
 
 export interface DtaTestConfigurations extends TestConfigurations {

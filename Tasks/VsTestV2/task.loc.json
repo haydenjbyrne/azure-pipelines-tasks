@@ -18,7 +18,7 @@
   "version": {
     "Major": 2,
     "Minor": 170,
-    "Patch": 5
+    "Patch": 9
   },
   "demands": [
     "vstest"
@@ -192,6 +192,20 @@
       "required": false,
       "helpMarkDown": "ms-resource:loc.input.help.uiTests",
       "groupName": "testSelection"
+    },
+    {
+      "name": "assemblyRunOrder",
+      "type": "multiLine",
+      "label": "ms-resource:loc.input.label.assemblyRunOrder",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "ms-resource:loc.input.help.assemblyRunOrder",
+      "groupName": "testSelection",
+      "properties": {
+        "rows": "1",
+        "resizable": "true"
+      },
+      "visibleRule": "testSelector = testAssemblies"
     },
     {
       "name": "vstestLocationMethod",

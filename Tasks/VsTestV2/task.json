@@ -18,7 +18,7 @@
     "version": {
         "Major": 2,
         "Minor": 170,
-        "Patch": 5
+        "Patch": 9
     },
     "demands": [
         "vstest"
@@ -192,6 +192,20 @@
             "required": false,
             "helpMarkDown": "To run UI tests, ensure that the agent is set to run in interactive mode. Setting up an agent to run interactively must be done before queueing the build / release. Checking this box does <b>not</b> configure the agent in interactive mode automatically. This option in the task is to only serve as a reminder to configure agent appropriately to avoid failures. <br><br> Hosted Windows agents from the VS 2015 and 2017 pools can be used to run UI tests.<br> [More information](https://aka.ms/uitestmoreinfo).",
             "groupName": "testSelection"
+        },
+        {
+            "name": "assemblyRunOrder",
+            "type": "multiLine",
+            "label": "Order to run test assemblies",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Execute test assemblies in this order. Assemblies not in list will be executed last",
+            "groupName": "testSelection",
+            "properties": {
+                "rows": "1",
+                "resizable": "true"
+            },
+            "visibleRule": "testSelector = testAssemblies"
         },
         {
             "name": "vstestLocationMethod",
