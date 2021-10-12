@@ -18,7 +18,7 @@
   "version": {
     "Major": 2,
     "Minor": 170,
-    "Patch": 9
+    "Patch": 10
   },
   "demands": [
     "vstest"
@@ -617,6 +617,7 @@
     "testSelectorInput": "ms-resource:loc.messages.testSelectorInput",
     "searchFolderInput": "ms-resource:loc.messages.searchFolderInput",
     "testFilterCriteriaInput": "ms-resource:loc.messages.testFilterCriteriaInput",
+    "assemblyRunOrder": "ms-resource:loc.messages.assemblyRunOrder",
     "runSettingsFileInput": "ms-resource:loc.messages.runSettingsFileInput",
     "runInParallelInput": "ms-resource:loc.messages.runInParallelInput",
     "runInIsolationInput": "ms-resource:loc.messages.runInIsolationInput",
@@ -656,6 +657,7 @@
     "rerunMaxAttempts": "ms-resource:loc.messages.rerunMaxAttempts",
     "invalidRerunMaxAttempts": "ms-resource:loc.messages.invalidRerunMaxAttempts",
     "rerunNotSupported": "ms-resource:loc.messages.rerunNotSupported",
+    "disableTrx": "ms-resource:loc.messages.disableTrx",
     "toolsInstallerPathNotSet": "ms-resource:loc.messages.toolsInstallerPathNotSet",
     "testImpactAndCCWontWork": "ms-resource:loc.messages.testImpactAndCCWontWork",
     "ToolsInstallerInstallationError": "ms-resource:loc.messages.ToolsInstallerInstallationError",
